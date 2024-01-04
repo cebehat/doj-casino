@@ -2,7 +2,7 @@ Config = {}
 
 Config.PlayCasinoAmbientNoise = true
 Config.SetShowCarOnDisplay = true
-Config.VehicleOnDisplay = `crownbp`
+Config.VehicleOnDisplay = 'zentorno'
 
 
 Config.SetAnimatedWalls = true
