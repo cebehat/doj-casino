@@ -3,7 +3,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 
 local ItemList = {
-    ["casino_goldchip"] = 1
+    ["casinochips"] = 1
 }
 QBCore.Functions.CreateCallback('BLACKJACKRT98:server:blackChipsAmount', function(source, cb)
     local retval = 0
@@ -51,9 +51,9 @@ local blackjackGameData = {}
 function tryTakeChips(source,amount)
     local Player = QBCore.Functions.GetPlayer(source)
     local ItemList = {
-        ["casino_goldchip"] = 1,
+        ["casinochips"] = 1,
     }
-    local playerChips = Player.Functions.GetItemByName("casino_goldchip")
+    local playerChips = Player.Functions.GetItemByName("casinochips")
     local canBet = false
 
     if Player.PlayerData.items ~= nil and next(Player.PlayerData.items) ~= nil then 
@@ -61,8 +61,8 @@ function tryTakeChips(source,amount)
             if Player.PlayerData.items[k] ~= nil then 
                 if ItemList[Player.PlayerData.items[k].name] ~= nil then 
                     if playerChips.amount >= amount then 
-                        Player.Functions.RemoveItem("casino_goldchip", amount)
-                        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["casino_goldchip"], 'remove')
+                        Player.Functions.RemoveItem("casinochips", amount)
+                        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["casinochips"], 'remove')
                         canBet = true
                     end
                 end
@@ -78,8 +78,8 @@ function giveChips(source,amount)
     local src = source 
     local Player = QBCore.Functions.GetPlayer(src)
     if Player ~= nil then
-        if Player.Functions.AddItem('casino_goldchip', amount, nil, {["quality"] = 100}) then
-            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casino_goldchip"], "add", amount)
+        if Player.Functions.AddItem('casinochips', amount, nil, {["quality"] = 100}) then
+            TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casinochips"], "add", amount)
             TriggerClientEvent('QBCore:Notify', src, "You Won "..math.floor(amount).." Casino Chips!")
         else
             TriggerClientEvent('QBCore:Notify', src, 'You have to much in your pockets', 'error')

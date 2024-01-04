@@ -4,8 +4,8 @@ QBCore = exports['qb-core']:GetCoreObject()
 function getPlayerChips(source)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player then
-        if Player.Functions.GetItemByName('casino_goldchip') ~= nil then
-            return Player.Functions.GetItemByName('casino_goldchip').amount
+        if Player.Functions.GetItemByName('casinochips') ~= nil then
+            return Player.Functions.GetItemByName('casinochips').amount
         else
             return 0
         end
@@ -17,8 +17,8 @@ end
 function giveChips(source, amount)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player then
-        Player.Functions.AddItem("casino_goldchip", amount, nil, nil, false, GetCurrentResourceName(), "", "", "")
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "add", amount) 
+        Player.Functions.AddItem("casinochips", amount, nil, nil, false, GetCurrentResourceName(), "", "", "")
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "add", amount) 
         updatePlayerChips(source) 
     end
 end
@@ -26,8 +26,8 @@ end
 function removeChips(source, amount)
     local Player = QBCore.Functions.GetPlayer(source)
     if Player then
-        Player.Functions.RemoveItem("casino_goldchip", amount)
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "remove", amount) 
+        Player.Functions.RemoveItem("casinochips", amount)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "remove", amount) 
         updatePlayerChips(source)
     end
 end

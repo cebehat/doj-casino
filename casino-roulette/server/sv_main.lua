@@ -6,7 +6,7 @@ local aktivRulettek = {}
 
 function getPlayerChips(source)
     -- local Player = QBCore.Functions.GetPlayer(source)
-    -- local Chips = Player.Functions.GetItemByName("casino_goldchip")
+    -- local Chips = Player.Functions.GetItemByName("casinochips")
     -- if Chips ~= nil then 
     --     if Chips.amount >= 10 then
     --         return Chips.amount 
@@ -15,7 +15,7 @@ function getPlayerChips(source)
 
     local Player = QBCore.Functions.GetPlayer(source)
     local retval = 0
-    local Item = Player.Functions.GetItemByName('casino_goldchip')
+    local Item = Player.Functions.GetItemByName('casinochips')
     if Item  then
         retval = Item.amount
     end
@@ -24,23 +24,23 @@ end
 
 function giveChips(source, amount)
     local Player = QBCore.Functions.GetPlayer(source)
-    if Player.Functions.AddItem("casino_goldchip", amount, nil, nil, false, GetCurrentResourceName(), "", "", "")  then
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "add")
+    if Player.Functions.AddItem("casinochips", amount, nil, nil, false, GetCurrentResourceName(), "", "", "")  then
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "add")
         TriggerClientEvent('QBCore:Notify', source, "+ "..amount.." Chips")
     end
 end 
 
 function removeChips(source, amount)
     local Player = QBCore.Functions.GetPlayer(source)
-    if Player.Functions.RemoveItem("casino_goldchip", amount)  then
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "remove")
+    if Player.Functions.RemoveItem("casinochips", amount)  then
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "remove")
         TriggerClientEvent('QBCore:Notify', source, "- "..amount.." Chips")
     end 
 end
 
 
 local ItemList = {
-    ["casino_goldchip"] = 1 
+    ["casinochips"] = 1 
 }
 QBCore.Functions.CreateCallback('roulette:server:ChipsAmount', function(source, cb)
     local retval = 0

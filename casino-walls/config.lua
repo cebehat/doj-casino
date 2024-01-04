@@ -26,7 +26,7 @@ Config.casinoMemberPrice  = 500
 Config.casinoVIPPrice  = 500
 
 Config.CasinoShop = {
-    [1] = { name = "casino_goldchip",   price = 100, amount = 1000, info = {}, type = "item", slot = 1 },
+    [1] = { name = "casinochips",   price = 100, amount = 1000, info = {}, type = "item", slot = 1 },
     -- [2] = { name = "casino_member",     price = 500, amount = 50, info = {}, type = "item", slot = 2 },
     -- [3] = { name = "casino_vip",        price = 750, amount = 50, info = {}, type = "item", slot = 3 }
 }   

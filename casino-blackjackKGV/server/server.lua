@@ -161,9 +161,9 @@ AddEventHandler('BLACKJACK:SetPlayerBet', SetPlayerBet)
 function CheckPlayerBet(i, bet)
 	local Player = QBCore.Functions.GetPlayer(source)
 	local ItemList = {
-		["casino_goldchip"] = 1,
+		["casinochips"] = 1,
 	}
-	local playerChips = Player.Functions.GetItemByName("casino_goldchip")
+	local playerChips = Player.Functions.GetItemByName("casinochips")
 	local canBet = false
     if Player.PlayerData.items ~= nil and next(Player.PlayerData.items) ~= nil then
         for k, v in pairs(Player.PlayerData.items) do
@@ -898,7 +898,7 @@ exports("SetGiveChipsCallback", SetGiveChipsCallback)
 -- ==================================================================================== Added
 
 local ItemList = {
-    ["casino_goldchip"] = 1
+    ["casinochips"] = 1
 }
 QBCore.Functions.CreateCallback('BLACKJACKKGV:server:blackChipsAmount', function(source, cb)
     local retval = 0
@@ -919,7 +919,7 @@ function SetExports()
 	exports["casino-blackjackKGV"]:SetGetChipsCallback(function(source)
 		local src = source 
 		local Player = QBCore.Functions.GetPlayer(src)
-		local Chips = Player.Functions.GetItemByName("casino_goldchip")
+		local Chips = Player.Functions.GetItemByName("casinochips")
 		local minAmount = 10
 		if Chips ~= nil then 
 			if Chips.amount >= minAmount then
@@ -935,8 +935,8 @@ function SetExports()
     exports["casino-blackjackKGV"]:SetTakeChipsCallback(function(source, amount)
 		local Player = QBCore.Functions.GetPlayer(source)
         if Player ~= nil then
-            Player.Functions.RemoveItem("casino_goldchip", amount)
-            TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "remove", amount)
+            Player.Functions.RemoveItem("casinochips", amount)
+            TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "remove", amount)
         end
     end) 
 
@@ -944,8 +944,8 @@ function SetExports()
 		local src = source 
         local Player = QBCore.Functions.GetPlayer(source)
         if Player ~= nil then
-			if Player.Functions.AddItem('casino_goldchip', amount, nil, {["quality"] = 100}) then
-				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casino_goldchip"], "add", amount)
+			if Player.Functions.AddItem('casinochips', amount, nil, {["quality"] = 100}) then
+				TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items["casinochips"], "add", amount)
 				TriggerClientEvent('QBCore:Notify', src, "You Won "..math.floor(amount).." Casino Chips!")
 			else
 				TriggerClientEvent('QBCore:Notify', src, 'You have to much in your pockets', 'error')

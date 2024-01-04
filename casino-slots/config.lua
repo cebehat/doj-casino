@@ -231,4 +231,4 @@ SpecialReward = {
 UseCash = false
 UseBank = false
 UseItem = true
-ItemName = 'casino_goldchip'
+ItemName = 'casinochips'

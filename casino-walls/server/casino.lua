@@ -2,7 +2,7 @@ local QBCore = exports['qb-core']:GetCoreObject()
 
 local quantity = 0
 local ItemList = {
-    ["casino_goldchip"] = 1,
+    ["casinochips"] = 1,
 }
 
 RegisterServerEvent("qb-casino:server:GoldSell")
@@ -10,7 +10,7 @@ AddEventHandler("qb-casino:server:GoldSell", function()
     local src = source
     local price = Config.casinoChipPrice
     local Player = QBCore.Functions.GetPlayer(src)
-    local xItem = Player.Functions.GetItemByName("casino_goldchip")
+    local xItem = Player.Functions.GetItemByName("casinochips")
     if xItem ~= nil then
         local quantity = 0
         for k, v in pairs(Player.PlayerData.items) do 
@@ -23,7 +23,7 @@ AddEventHandler("qb-casino:server:GoldSell", function()
         end
         price = price * quantity
         Player.Functions.AddMoney(Config.payment, price, "sold-casino-chips")
-        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casino_goldchip'], "remove", quantity)
+        TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items['casinochips'], "remove", quantity)
         TriggerClientEvent('QBCore:Notify', src, "You sold "..quantity.." Gold chips for $"..price)
         TriggerEvent('qb-log:server:CreateLog', 'guedesteste', 'Dinheiro Venda | '..Player.PlayerData.name, 'default', quantity.." fichas de ouro por "..price.."€")
         TriggerClientEvent("doj:casinoChipMenu", src)
