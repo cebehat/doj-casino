@@ -3,7 +3,7 @@ Config	= {}
 
 Config.WheelPos = {x = 949.71, y = 45.1, z = 70.9, h =328.0}	-- Where the wheel prop will spawn OR where wheel prop is
 Config.startingPrice = 5000
-Config.VehiclePrize = 'impaler'
+Config.VehiclePrize = 'zentorno'
 Config.VehicleSpawnCoords = vector4(933.29, -2.82, 78.76, 144.6)
 Config.VehiclePlateText = 'Diamond'
 
@@ -11,11 +11,11 @@ Config.VehiclePlateText = 'Diamond'
 Config.LimitedSpins = false				-- [true = players spin once per day for free] [false= $5000 a spin]
 Config.LimitedSpinResetTime = 3600000 	-- 1 hour real time
 
- 
+
 
 
 -- type = [weapon, money, item, car] (for money it will give only in bank)
--- name = item in the database 
+-- name = item in the database
 -- count = amount to receive
 -- sound = [car, cash, clothes, chips, mystery, win]
 
@@ -40,5 +40,5 @@ Config.Prices = {
 	[17] = {type = 'money',		name = 'money', 				count = 20000, 	sound = 'cash', 	probability = {a = 640, b = 700}},	--  8.0 %  72.0 -- 20.000 $
 	[18] = {type = 'money', 	name = 'money', 				count = 2500, 	sound = 'cash', 	probability = {a = 700, b = 810}},	--  9.0 %  81.0 -- 2.500 RP
 	[19] = {type = 'item', 		name = 'sandwich', 				count = 1, 		sound = 'clothes', 	probability = {a = 810, b = 990}},	--  9.0 %  90.0 -- CLOTHING
-	[20] = {type = 'money', 	name = 'money', 				count = 50000, 	sound = 'cash', 	probability = {a = 990, b = 1000}},	--  1.0 %       -- 50.000 $ 
+	[20] = {type = 'money', 	name = 'money', 				count = 50000, 	sound = 'cash', 	probability = {a = 990, b = 1000}},	--  1.0 %       -- 50.000 $
 }

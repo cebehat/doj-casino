@@ -196,10 +196,10 @@ local function SlotMachineHandler()
     CreateThread(function()
         while true do
             QBCore.Functions.TriggerCallback('doj:server:CasinoChipsAmount', function(result)
-                exports['casinoUi']:DrawCasinoUi('show', "The Diamond Casino & Resort Slots</p>"..SlotReferences[ClosestSlotModel].name.."</p>Availble chips: "..math.floor(result))   
+                exports['casinoUi']:DrawCasinoUi('show', "The Diamond Casino & Resort Slots</p>"..SlotReferences[ClosestSlotModel].name.."</p>Avaiable chips: "..math.floor(result))
             end)
             if not IsSpinning then
-                if IsControlJustPressed(0, 202) then -- BACKSPACE 
+                if IsControlJustPressed(0, 202) then -- BACKSPACE
                     local LeaveScene = NetworkCreateSynchronisedScene(ClosestSlotCoord, ClosestSlotRotation, 2, 2, 0, 1.0, 0, 1.0)
                     LoadAnimDict(AnimDict)
                     RandomAnimName = RandomLeave[math.random(1, #RandomLeave)]
@@ -210,7 +210,7 @@ local function SlotMachineHandler()
                     EnteredSlot = false
                     ShouldDrawScaleForm = false
                     exports['qb-core']:HideText()
-                    exports['casinoUi']:HideCasinoUi('hide') 
+                    exports['casinoUi']:HideCasinoUi('hide')
                     CallScaleformMethod('SET_BET')
                     CallScaleformMethod('SET_LAST_WIN')
                     CallScaleformMethod('SET_MESSAGE', '')
@@ -253,7 +253,7 @@ local function SlotMachineHandler()
                     NetworkStartSynchronisedScene(BetOneScene)
                     Wait(GetAnimDuration(AnimDict, 'press_betone_a') * 200)
                     CallScaleformMethod('SET_BET', SlotReferences[ClosestSlotModel].betamounts[ChosenBetAmount])
-                    StartIdleScene('press_betone_a') 
+                    StartIdleScene('press_betone_a')
                 elseif IsControlJustPressed(0, 45) then -- R
                     Sounds[6]()
                     ChosenBetAmount = #SlotReferences[ClosestSlotModel].betamounts
@@ -314,19 +314,19 @@ end)
 -- 	while true do
 --         local WaitTime = 500
 --         if NearbySlot and not EnteredSlot then
---             WaitTime = 0 
+--             WaitTime = 0
 --             -- exports['qb-core']:DrawText('<b>Diamond Casino Slots</p></b>'..SlotReferences[ClosestSlotModel].name..'</p>Press [E] to sit</p>')
 --             DrawText3D(ClosestSlotCoord.x - ClosestSlotForwardX, ClosestSlotCoord.y - ClosestSlotForwardY, ClosestSlotCoord.z + 1, "[E] - Play ~b~"..SlotReferences[ClosestSlotModel].name)
 --             if IsControlJustReleased(0, 38) then
 
 --                 QBCore.Functions.TriggerCallback('doj:server:HasCasinoMembership', function(HasItem)
---                     if HasItem then 
+--                     if HasItem then
 --                         local netID = NetworkGetEntityIsNetworked(ClosestSlot) and NetworkGetNetworkIdFromEntity(ClosestSlot)
 --                         if not netID then
 --                             NetworkRegisterEntityAsNetworked(ClosestSlot)
 --                             netID = NetworkGetNetworkIdFromEntity(ClosestSlot)
 --                             NetworkUseHighPrecisionBlending(netID, false)
---                             SetNetworkIdExistsOnAllMachines(netID, true) 
+--                             SetNetworkIdExistsOnAllMachines(netID, true)
 --                             SetNetworkIdCanMigrate(netID, true)
 --                         end
 --                         NetworkRequestControlOfEntity(ClosestSlot)
@@ -342,7 +342,7 @@ end)
 --         Wait(WaitTime)
 --     end
 -- end)
- 
+
 
 
 Citizen.CreateThread(function()
@@ -356,7 +356,7 @@ Citizen.CreateThread(function()
             local inZone = false
             if dist <= 2.0 then
                 wait = 5
-                inZone  = true 
+                inZone  = true
                 text = '<b>The Diamond Casino & Resort</p>Slot: '..SlotReferences[ClosestSlotModel].name..'</b></p>Press <b>E</b> to sit'
                 if IsControlJustPressed(0, 38) then
                     local netID = NetworkGetEntityIsNetworked(ClosestSlot) and NetworkGetNetworkIdFromEntity(ClosestSlot)
@@ -375,7 +375,7 @@ Citizen.CreateThread(function()
             end
             if inZone and not alreadyEnteredZone then
                 alreadyEnteredZone = true
-                exports["qb-core"]:DrawText(text)  
+                exports["qb-core"]:DrawText(text)
             end
             if not inZone and alreadyEnteredZone then
                 alreadyEnteredZone = false

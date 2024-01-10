@@ -11,52 +11,52 @@ Config.ShowCardsAfterReveal = true -- showing cameras on the players cards when 
 
 Config.Pokers = {
     [1] = {
-        Position = vector3(996.17, 51.69, 68.45), 
+        Position = vector3(996.17, 51.69, 68.45),
         Heading = 318.91,
-        MaximumBet = 2500,
-        MinimumBet = 50 
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [2] = {
         Position = vector3(1000.66, 50.88, 68.45),
         Heading = 6.73,
-        MaximumBet = 2500,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [3] = {
         Position = vector3(984.97, 66.64, 69.25),
         Heading = 3.39,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [4] = {
         Position = vector3(998.44, 60.99, 68.45),
         Heading = 191.77,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [5] = {
         Position = vector3(994.89, 58.29, 68.45),
         Heading = 237.13,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [6] = {
         Position = vector3(988.45, 64.38, 69.25),
         Heading = 278.52,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [7] = {
         Position = vector3(991.56, 40.10, 69.25),
         Heading = 200.84,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     },
     [8] = {
         Position = vector3(993.20, 43.70, 69.25),
         Heading = 279.25,
-        MaximumBet = 2000,
-        MinimumBet = 50
+        MaximumBet = 25,
+        MinimumBet = 1
     }
 }
 
